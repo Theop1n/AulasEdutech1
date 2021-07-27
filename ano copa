@@ -1,0 +1,43 @@
+<meta charset="utf-8">
+
+<script>
+	
+	function pulaLinha() {
+
+		document.write("<br>");
+		document.write("<br>");
+
+	}
+
+	function mostra(frase){
+
+		document.write(frase);
+		pulaLinha();
+
+
+	}
+	var limite = parseInt(prompt("até que data você quer saber o ano que vai ter copa ? "));
+
+	var anoCopa = 1930;
+
+	while(anoCopa <=limite){
+
+	mostra("Teve copa em "+ anoCopa);
+	anoCopa =anoCopa + 4;
+
+	}
+
+	mostra("é isso")
+
+	if (limite <=1929) {
+
+		mostra("a primeira copa do mundo foi em 1930 por favor insira um valor valido" + "<br>" + "acima de 1930");
+	}
+
+	
+
+
+
+
+
+</script>
