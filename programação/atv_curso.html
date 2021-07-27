@@ -1,0 +1,19 @@
+<script>
+var x = parseInt(prompt("informe um número"));
+var y = parseInt(prompt("informe um número"));
+var z = parseInt(prompt("informe um número"));
+
+
+var numero = [x, y, z];
+
+
+numero = numero.sort(function (a, b) {  return a - b;  });
+
+
+numero = numero.sort((a, b) => a - b);
+
+
+
+document.write(numero)
+
+</script>

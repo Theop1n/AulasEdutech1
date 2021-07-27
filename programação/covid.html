@@ -1,0 +1,86 @@
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+        document.write("<br>");
+
+}
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+}
+	function calculaDados(){
+
+
+		mortos + doentes + internados /3
+	}
+
+
+
+var mortos = parseInt(prompt("insira a quantidade de mortos da sua cidade ou país"));
+var doentes = parseInt(prompt("insira a quantidade de doentes no seu país ou na sua cidade"));
+var internados = parseInt(prompt("insira a quantidade de internados na sua cidade ou pais"))
+var resultado = (mortos + doentes + internados) /3
+
+var pais = parseInt(prompt("insira a população do seu país ou cidade"))
+var porcentagemMortosCP = mortos / pais
+var porcentagemDoentesCP = doentes / pais
+var porcentagemInternadosCP = internados / pais
+
+mostra("a porcentagem de mortos é " +  porcentagemMortosCP + "%")
+mostra("a porcentagem de doentes é " + porcentagemMortosCP + "%")
+mostra ("a porcentagem de internados é " + porcentagemMortosCP + "%")
+
+
+
+</script>
+
+<canvas width="6000" height="4000"></canvas>
+<script>
+
+
+    function desenhaRetangulo(x, y, largura, altura, cor) {
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+
+        pincel.fillStyle=cor;
+        pincel.fillRect(x,y, largura, altura);
+        pincel.strokeStyle='black';
+        pincel.strokeRect(x,y, largura, altura);
+    }
+
+    function desenhaTexto(x , y, texto) {
+        var tela = document.querySelector('canvas');
+        var pincel = tela.getContext('2d');
+
+        pincel.font='15px Georgia';
+        pincel.fillStyle='black';
+        pincel.fillText(texto, x, y);    
+    }
+
+    function desenhaBarra(x, y,z, serie, cores, texto) {
+
+        desenhaTexto(x, y - 10, texto);
+
+        var somaAltura = 0;
+        for (var i = 0; i < serie.length; i++) {
+            var altura = serie[i];
+            desenhaRetangulo(x, y + somaAltura, 50, altura, cores[i]);
+            somaAltura = somaAltura + altura;
+        }
+    }
+
+    var cores = ['black','darkblue','purple'];
+    var covid = [porcentagemMortosCP,porcentagemDoentesCP,porcentagemInternadosCP];
+
+
+    desenhaBarra(porcentagemMortosCP,porcentagemDoentesCP,porcentagemInternadosCP, covid, cores, 'dados');
+
+</script>
+
+    
+
+</script>

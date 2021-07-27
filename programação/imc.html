@@ -1,0 +1,87 @@
+<meta charset="utf-8">
+
+<script>
+
+	function pulaLinha() {
+
+		document.write("<br>"
+			);
+		document.write("<br>");
+	}
+	function mostra (frase){
+		document.write(frase);
+		pulaLinha();
+
+	}
+
+	function calculaImc(altura, peso) {
+
+
+		
+		return  (+ peso / (altura * altura ));
+
+	}
+     
+    var nome = prompt("informe seu nome")
+	var alturaInformada = prompt(nome + " informe sua altura,");
+	var pesoInformado = prompt( nome + " informe seu peso ")
+
+	var imc =  calculaImc(alturaInformada, pesoInformado)
+
+
+	mostra(nome + " O seu IMC é, " + imc);
+	
+
+	if(imc <= 18.4) {
+
+		mostra(" ta abaixo do peso, tem que comer mais meu fi tipo ta magro pra krl mesmo" );
+	}
+
+	if (imc >= 18.5) {
+
+		if (imc <=24.8) {
+
+			mostra(" teu imc ta perfeito sei nem como zoar")
+		}
+	}
+	if (imc == 24.9) {
+
+		mostra("ta quaaaaase com sobrepeso mas ainda ta de boa");
+	}
+
+	if (imc >= 25) {
+
+		if (imc <= 29.8) {
+
+			mostra("Ta com um leve sobrepeso maaas ainda ta tranquilo");
+		}
+	}
+	if (imc == 29.9) {
+
+		mostra("ta querendo competir com o papai noel krl ??? entra num regime sem exagero ai que ta foda meu amigo");
+	}
+
+	if (imc >= 30) {
+
+		if (imc <=34.9) {
+
+			mostra("mano volta enquanto da tempo pls da uma help ai para de jogar lol e vai dar uma corrida");
+		}
+	}
+	if (imc >= 35) {
+
+		if (imc <=39.9) {
+
+			mostra("um passo de ir pro discovery channel como hipopotamo");
+		}
+	}
+
+	if (imc >= 40) {
+
+		mostra (" só doutor now pra te ajudar F to pay respect");
+	}
+
+	Math.round(imc);
+
+
+</script>

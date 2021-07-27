@@ -1,0 +1,139 @@
+<script>
+	     function pulaLinha() {
+
+                document.write("<br>");
+                document.write("<br>");
+        }
+
+        function mostra(frase) {
+
+            document.write(frase);
+            pulaLinha();
+    }
+
+
+    mostra("aperte D para limpar a tela");
+
+
+</script>
+
+
+
+<canvas width="303" height="303"></canvas>
+escolha sua cor e vença seu adversário
+<input type="color">
+
+<script>
+    var deletar = 68;
+	var paleta = document.querySelector('input');
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'white';
+    pincel.fillRect(0, 0, 300, 300);
+
+    var desenha = false;
+
+    function desenhaCirculo(evento) {
+
+        if(desenha) {
+            var x = evento.pageX - tela.offsetLeft;
+            var y = evento.pageY - tela.offsetTop;
+            pincel.fillStyle = paleta.value; 
+            pincel.beginPath();
+            pincel.arc(x, y, 10, 0, 2 * 3.14);
+            pincel.fill();
+        }
+        console.log(x + ',' + y);
+    }
+
+        tela.onmousemove = desenhaCirculo;
+
+
+        tela.onmousedown = function() {
+
+           desenha = true;
+    }
+
+
+        tela.onmouseup = function() {
+
+            desenha = false;
+    }
+
+
+
+
+
+    function desenhaJogoVelha() {
+
+  
+
+        pincel.fillStyle = 'white';
+        pincel.fillRect(0, 0, 100, 100);
+        pincel.strokeStyle = 'black';
+        pincel.strokeRect(0, 0, 100, 100);
+        pincel.fillStyle = 'white';
+        pincel.fillRect(100, 0, 100, 100);
+        pincel.strokeStyle = 'black';
+        pincel.strokeRect(100, 0, 100, 100);
+        pincel.fillStyle = 'white';
+        pincel.fillRect(200, 0, 100, 100);
+        pincel.strokeStyle = 'black';
+        pincel.strokeRect(200, 0, 100, 100);
+        pincel.fillStyle = 'white';
+        pincel.fillRect(0, 100, 100, 100);
+        pincel.strokeStyle = 'black';
+        pincel.strokeRect(0, 100, 100, 100);
+        pincel.fillStyle = 'white';
+        pincel.fillRect(0, 200, 100, 100);
+        pincel.strokeStyle = 'black';
+        pincel.strokeRect(0, 200, 100, 100);
+        pincel.fillStyle = 'white';
+        pincel.fillRect(100, 200, 100, 100);
+        pincel.strokeStyle = 'black';
+        pincel.strokeRect(100, 200, 100, 100);
+        pincel.fillStyle = 'white';
+        pincel.fillRect(200, 200, 100, 100);
+        pincel.strokeStyle = 'black';
+        pincel.strokeRect(200, 200, 100, 100);
+        pincel.fillStyle = 'white';
+        pincel.fillRect(200, 100, 200, 100);
+        pincel.strokeStyle = 'black';
+        pincel.strokeRect(200, 100, 100, 100);
+}
+    function limpaTela() {
+
+
+
+            pincel.clearRect(0, 0, 550, 525);
+    }
+
+          function atualizaTela(){
+
+            limpaTela();
+            desenhaJogoVelha();
+    }
+
+        function leDoTeclado(evento) {
+
+            if (evento.keyCode == deletar) {
+
+                atualizaTela();
+
+
+            }
+
+   }
+
+
+        document.onkeydown = leDoTeclado 
+
+
+
+
+desenhaJogoVelha();
+desenhaCirculo();
+
+
+</script>
